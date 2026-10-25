@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نبع الحياة | لفلاتر وأنظمة تنقية المياه المتطورة</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Cairo & Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        water: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                            dark: '#051923',
+                        },
+                        cyanAccent: '#00f2fe',
+                        emeraldAccent: '#10b981',
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        tajawal: ['Tajawal', 'sans-serif'],
+                    },
+                    animation: {
+                        'wave-slow': 'wave 8s linear infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        wave: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #03131d;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(12, 74, 110, 0.25);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+        }
+        .glass-card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card-hover:hover {
+            background: rgba(14, 165, 233, 0.2);
+            border-color: rgba(56, 189, 248, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px -5px rgba(14, 165, 233, 0.25);
+        }
+        .glow-text {
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #7dd3fc 0%, #00f2fe 50%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #051923;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0284c7;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="selection:bg-water-500 selection:text-white">
+
+    <!-- Top Contact Bar -->
+    <div class="bg-water-dark border-b border-water-500/20 py-2 px-4 text-xs font-semibold">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center gap-2 text-cyanAccent">
+                <i class="fa-solid fa-droplet"></i>
+                <span>شركة نبع الحياة لتقنية ومعالجة المياه</span>
+            </div>
+            <div class="flex items-center gap-6 text-slate-300">
+                <a href="tel:01144376187" class="hover:text-cyanAccent transition-colors"><i class="fa-solid fa-phone text-emeraldAccent ml-1"></i> صيانة (م/ ممدوح): 01144376187</a>
+                <a href="tel:01116216742" class="hover:text-cyanAccent transition-colors"><i class="fa-solid fa-user-gear text-cyanAccent ml-1"></i> إدارة (م/ نبيل): 01116216742</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md bg-water-dark/80 border-b border-water-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="relative w-12 h-12 flex items-center justify-center rounded-2xl bg-gradient-to-tr from-water-700 to-water-400 p-0.5 shadow-lg shadow-water-500/30 group-hover:scale-105 transition-transform">
+                        <div class="w-full h-full bg-water-dark rounded-[14px] flex items-center justify-center">
+                            <i class="fa-solid font-bold fa-droplet text-cyanAccent text-2xl animate-pulse"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-black text-white tracking-wide">نبع <span class="gradient-text">الحياة</span></span>
+                        <span class="block text-[10px] text-water-300 font-medium tracking-widest -mt-1">لتنقية ومعالجة المياه</span>
+                    </div>
+                </a>
+
+                <!-- Navigation Desktop -->
+                <nav class="hidden md:flex items-center gap-8 font-semibold text-sm">
+                    <a href="#hero" class="text-water-300 hover:text-cyanAccent transition-colors">الرئيسية</a>
+                    <a href="#about" class="text-slate-300 hover:text-cyanAccent transition-colors">عن الشركة</a>
+                    <a href="#services" class="text-slate-300 hover:text-cyanAccent transition-colors">خدماتنا</a>
+                    <a href="#products" class="text-slate-300 hover:text-cyanAccent transition-colors">الأجهزة والمنتجات</a>
+                    <a href="#calculator" class="text-slate-300 hover:text-cyanAccent transition-colors">حاسبة الصيانة</a>
+                    <a href="#reviews" class="text-slate-300 hover:text-cyanAccent transition-colors">آراء العملاء</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden sm:flex items-center gap-4">
+                    <a href="#contact" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-water-600 to-cyan-500 hover:from-water-500 hover:to-cyan-400 text-white font-bold text-sm shadow-lg shadow-water-600/30 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-headset"></i>
+                        <span>احجز معاينة مجانية</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2 rounded-lg focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-water-dark/95 border-b border-water-500/20 px-4 pt-2 pb-6 space-y-3 font-semibold">
+            <a href="#hero" class="block py-2 text-water-300 border-b border-slate-800">الرئيسية</a>
+            <a href="#about" class="block py-2 text-slate-300 hover:text-cyanAccent border-b border-slate-800">عن الشركة</a>
+            <a href="#services" class="block py-2 text-slate-300 hover:text-cyanAccent border-b border-slate-800">خدماتنا</a>
+            <a href="#products" class="block py-2 text-slate-300 hover:text-cyanAccent border-b border-slate-800">الأجهزة والمنتجات</a>
+            <a href="#calculator" class="block py-2 text-slate-300 hover:text-cyanAccent border-b border-slate-800">حاسبة الصيانة</a>
+            <a href="#reviews" class="block py-2 text-slate-300 hover:text-cyanAccent border-b border-slate-800">آراء العملاء</a>
+            <a href="#contact" class="block mt-4 text-center py-3 rounded-xl bg-gradient-to-r from-water-600 to-cyan-500 text-white font-bold">احجز معاينة مجانية</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen pt-12 flex items-center justify-center overflow-hidden">
+        <div class="absolute top-1/4 right-10 w-96 h-96 bg-water-500/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-10 left-10 w-96 h-96 bg-cyanAccent/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <div class="text-right space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-water-400/30 text-cyanAccent text-xs sm:text-sm font-semibold">
+                        <i class="fa-solid fa-shield-halved text-emeraldAccent"></i>
+                        <span>الشركة الرائدة في تكنولوجيا تحلية وفلترة المياه</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl font-black text-white leading-tight">
+                        نقاء يدوم.. <br>
+                        <span class="gradient-text glow-text">وصحة تدوم لعائلتك</span>
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg font-tajawal leading-relaxed max-w-xl">
+                        نقدم لك أحدث أنظمة تنقية المياه بالرو (RO) والفلاتر الذكية. حماية متكاملة من الشوائب، البكتيريا، والمواد الضارة للحصول على مياة صحية ونقية 100%.
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-4 pt-4">
+                        <a href="#products" class="px-8 py-4 rounded-xl bg-gradient-to-r from-water-500 to-cyan-500 text-white font-bold text-base shadow-xl shadow-water-500/30 hover:scale-105 transition-all flex items-center gap-3">
+                            <span>استكشف الأجهزة</span>
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+
+                        <a href="https://wa.me/201144376187?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20فلاتر%20المياه" target="_blank" class="px-8 py-4 rounded-xl glass-card hover:bg-emerald-500/20 text-emeraldAccent border border-emerald-500/30 font-bold text-base transition-all flex items-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>تواصل مع الصيانة</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Visual Showcase -->
+                <div class="relative flex justify-center items-center">
+                    <div class="relative w-full max-w-md aspect-square glass-card rounded-3xl p-6 border border-water-400/20 shadow-2xl flex items-center justify-center animate-float">
+                        <img src="https://images.unsplash.com/photo-1548839140-29a749e1bc4e?auto=format&fit=crop&w=600&q=80" alt="فلتر مياه نبع الحياة" class="rounded-2xl w-full h-full object-cover shadow-md">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Company CV & Stats Counter (عن الشركة) -->
+    <section id="about" class="py-24 relative bg-water-dark/60 border-y border-water-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs uppercase font-bold text-cyanAccent tracking-widest">ملف الشركة التعريفية</h2>
+                <h3 class="text-3xl sm:text-5xl font-black text-white">خبرة تتجاوز التوقعات في <span class="gradient-text">عالم معالجة المياه</span></h3>
+                <p class="text-slate-400 font-tajawal text-sm sm:text-base">تأسست شركة "نبع الحياة" لتكون الخيار الأول والأكثر أماناً لكافة الأسر والمؤسسات.</p>
+            </div>
+
+            <!-- Stats Counter Grid -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+                <div class="glass-card p-6 rounded-2xl text-center border-t-4 border-t-water-400">
+                    <i class="fa-solid fa-users text-4xl text-water-400 mb-3"></i>
+                    <div class="text-3xl sm:text-4xl font-black text-white mb-1">4783</div>
+                    <p class="text-xs sm:text-sm text-slate-300 font-tajawal">عميل يدين بالثقة لنا</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl text-center border-t-4 border-t-cyanAccent">
+                    <i class="fa-solid fa-square-check text-4xl text-cyanAccent mb-3"></i>
+                    <div class="text-3xl sm:text-4xl font-black text-white mb-1">12000</div>
+                    <p class="text-xs sm:text-sm text-slate-300 font-tajawal">مشروع وصيانة مكتملة</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl text-center border-t-4 border-t-emeraldAccent">
+                    <i class="fa-solid fa-award text-4xl text-emeraldAccent mb-3"></i>
+                    <div class="text-3xl sm:text-4xl font-black text-white mb-1">10</div>
+                    <p class="text-xs sm:text-sm text-slate-300 font-tajawal">سنوات خبرة متواصلة</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl text-center border-t-4 border-t-cyan-300">
+                    <i class="fa-solid fa-face-smile text-4xl text-cyan-300 mb-3"></i>
+                    <div class="text-3xl sm:text-4xl font-black text-white mb-1">92%</div>
+                    <p class="text-xs sm:text-sm text-slate-300 font-tajawal">نسبة رضا العملاء</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card glass-card-hover p-8 rounded-3xl space-y-4">
+                    <div class="w-14 h-14 rounded-2xl bg-water-500/20 flex items-center justify-center text-water-400 text-2xl">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white">رؤيتنا</h4>
+                    <p class="text-slate-300 text-sm font-tajawal leading-relaxed">أن نكون الشركة المرجعية الأولى بالمنطقة في تقديم تكنولوجيا الفلترة والتحلية.</p>
+                </div>
+
+                <div class="glass-card glass-card-hover p-8 rounded-3xl space-y-4">
+                    <div class="w-14 h-14 rounded-2xl bg-cyanAccent/20 flex items-center justify-center text-cyanAccent text-2xl">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white">رسالتنا</h4>
+                    <p class="text-slate-300 text-sm font-tajawal leading-relaxed">توفير مياة شرب نقية وصحية لكل منزل ومؤسسة بأسعار منافسة.</p>
+                </div>
+
+                <div class="glass-card glass-card-hover p-8 rounded-3xl space-y-4">
+                    <div class="w-14 h-14 rounded-2xl bg-emeraldAccent/20 flex items-center justify-center text-emeraldAccent text-2xl">
+                        <i class="fa-solid fa-thumbs-up"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white">لماذا تختارنا؟</h4>
+                    <p class="text-slate-300 text-sm font-tajawal leading-relaxed">قطع غيار أصلية 100% بفترات ضمان طويلة وفريق مهندسين متخصصين.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs uppercase font-bold text-cyanAccent tracking-widest">ماذا نقدم لك؟</h2>
+                <h3 class="text-3xl sm:text-5xl font-black text-white">خدمات احترافية متكاملة <span class="gradient-text">لشرب ماء آمن</span></h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glass-card glass-card-hover p-6 rounded-3xl relative overflow-hidden group">
+                    <div class="w-12 h-12 rounded-xl bg-water-500/20 text-water-400 flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-house-laptop"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">تركيب الفلاتر المنزلي</h4>
+                    <p class="text-slate-400 text-xs font-tajawal leading-relaxed mb-6">تركيب كافة أنواع الفلاتر المنزلية من 3 وحتى 7 مراحل RO.</p>
+                    <a href="#contact" class="inline-flex items-center gap-2 text-xs font-bold text-cyanAccent">طلب الخدمة <i class="fa-solid fa-chevron-left text-[10px]"></i></a>
+                </div>
+
+                <div class="glass-card glass-card-hover p-6 rounded-3xl relative overflow-hidden group">
+                    <div class="w-12 h-12 rounded-xl bg-cyanAccent/20 text-cyanAccent flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-wrench"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">الصيانة وتغيير الشمعات</h4>
+                    <p class="text-slate-400 text-xs font-tajawal leading-relaxed mb-6">جدول صيانة دوري ومتابعة شمعات الفلتر بمواعيدها المحددة.</p>
+                    <a href="#contact" class="inline-flex items-center gap-2 text-xs font-bold text-cyanAccent">طلب الخدمة <i class="fa-solid fa-chevron-left text-[10px]"></i></a>
+                </div>
+
+                <div class="glass-card glass-card-hover p-6 rounded-3xl relative overflow-hidden group">
+                    <div class="w-12 h-12 rounded-xl bg-emeraldAccent/20 text-emeraldAccent flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-vial"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">تحليل جودة ونقاء المياه</h4>
+                    <p class="text-slate-400 text-xs font-tajawal leading-relaxed mb-6">اختبار نسبة الأملاح (TDS) ونسبة الحموضة بمعدات رقمية دقيقة.</p>
+                    <a href="#contact" class="inline-flex items-center gap-2 text-xs font-bold text-cyanAccent">طلب الخدمة <i class="fa-solid fa-chevron-left text-[10px]"></i></a>
+                </div>
+
+                <div class="glass-card glass-card-hover p-6 rounded-3xl relative overflow-hidden group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-industry"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">محطات التنقية الصناعية</h4>
+                    <p class="text-slate-400 text-xs font-tajawal leading-relaxed mb-6">تصميم وتشييد خطوط تحلية مياه وتصفية عملاقة للمصانع والمطاعم.</p>
+                    <a href="#contact" class="inline-flex items-center gap-2 text-xs font-bold text-cyanAccent">طلب الخدمة <i class="fa-solid fa-chevron-left text-[10px]"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section id="products" class="py-24 bg-water-dark/60 border-t border-water-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+                <h2 class="text-xs uppercase font-bold text-cyanAccent tracking-widest">كتالوج المنتجات</h2>
+                <h3 class="text-3xl sm:text-5xl font-black text-white">أفضل <span class="gradient-text">فلاتر وأجهزة المياه</span></h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card rounded-3xl overflow-hidden border border-water-500/20 group">
+                    <div class="relative h-64 overflow-hidden bg-water-900/50">
+                        <img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=600&q=80" alt="فلتر 7 مراحل" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 bg-emerald-500/90 text-white text-[10px] font-bold px-3 py-1 rounded-full">الأكثر مبيعاً</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h4 class="text-lg font-bold text-white">فلتر 7 مراحل تايواني RO</h4>
+                        <p class="text-slate-400 text-xs font-tajawal">مزود بمضخة فائقة الهدوء مع شمعة المينرال لإعادة الأملاح المفيدة للجسم.</p>
+                        <button onclick="openProductModal('فلتر 7 مراحل تايواني RO', 'يحتوي على وحدة تناضح عكسي متطورة تزيل 99.9% من الأملاح الثقيلة والبكتيريا.', 'تايواني أصلي', '7 مراحل', 'https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=600&q=80')" class="w-full py-2.5 rounded-lg bg-water-600/50 hover:bg-water-500 text-white font-bold text-xs transition-colors">التفاصيل والمعاينة</button>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-3xl overflow-hidden border border-water-500/20 group">
+                    <div class="relative h-64 overflow-hidden bg-water-900/50">
+                        <img src="https://images.unsplash.com/photo-1541689592655-f5f52825a3b8?auto=format&fit=crop&w=600&q=80" alt="فلتر 5 مراحل" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h4 class="text-lg font-bold text-white">فلتر 5 مراحل تنقية فائقة</h4>
+                        <p class="text-slate-400 text-xs font-tajawal">يقضي على الكلور، الأتربة، الطعم والرائحة الكريهة من المياه بفاعلية عالية.</p>
+                        <button onclick="openProductModal('فلتر 5 مراحل تنقية فائقة', 'يوفر مياه صالحة للشرب والطهي بطعم نقي وممتاز عبر كربونات فائقة الجودة.', 'فيتنامي / تايواني', '5 مراحل', 'https://images.unsplash.com/photo-1541689592655-f5f52825a3b8?auto=format&fit=crop&w=600&q=80')" class="w-full py-2.5 rounded-lg bg-water-600/50 hover:bg-water-500 text-white font-bold text-xs transition-colors">التفاصيل والمعاينة</button>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-3xl overflow-hidden border border-water-500/20 group">
+                    <div class="relative h-64 overflow-hidden bg-water-900/50">
+                        <img src="https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?auto=format&fit=crop&w=600&q=80" alt="محطة تحلية" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h4 class="text-lg font-bold text-white">محطة تحلية للمطاعم والكافيهات</h4>
+                        <p class="text-slate-400 text-xs font-tajawal">تنتج من 400 إلى 1500 جالون يومياً لمقابلة استهلاك الكافيهات والمصانع.</p>
+                        <button onclick="openProductModal('محطة تحلية للمطاعم والكافيهات', 'محطات ضخمة مزودة بـ شاسيه استانلس استيل وشاشات ديجيتال لمراقبة ملوحة المياه.', 'أمريكي / تايواني', 'محطة تجارية', 'https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?auto=format&fit=crop&w=600&q=80')" class="w-full py-2.5 rounded-lg bg-water-600/50 hover:bg-water-500 text-white font-bold text-xs transition-colors">التفاصيل والمعاينة</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Maintenance Calculator -->
+    <section id="calculator" class="py-24 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card p-8 sm:p-12 rounded-3xl border border-water-400/30">
+                <div class="text-center space-y-4 mb-10">
+                    <span class="px-4 py-1.5 rounded-full bg-cyanAccent/10 text-cyanAccent font-bold text-xs">أداة تفاعلية ذكية</span>
+                    <h3 class="text-2xl sm:text-4xl font-black text-white">حاسبة مواعيد صيانة الشمعات</h3>
+                    <p class="text-slate-300 text-sm font-tajawal">اختر نوع الفلتر لديك لمعرفة الجدول الزمني المقترح لتغيير الشمعات والحفاظ على نقاء المياه.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-slate-300 font-bold text-sm mb-2">نوع الفلتر الخاص بك:</label>
+                            <select id="calc-filter-type" onchange="calculateMaintenance()" class="w-full bg-water-900 border border-water-500/40 rounded-xl px-4 py-3 text-white text-sm">
+                                <option value="3">فلتر 3 مراحل</option>
+                                <option value="5">فلتر 5 مراحل</option>
+                                <option value="7" selected>فلتر 7 مراحل RO التناضح العكسي</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-slate-300 font-bold text-sm mb-2">عدد أفراد الأسرة / الاستهلاك:</label>
+                            <select id="calc-family-size" onchange="calculateMaintenance()" class="w-full bg-water-900 border border-water-500/40 rounded-xl px-4 py-3 text-white text-sm">
+                                <option value="small">من 1 إلى 3 أفراد</option>
+                                <option value="medium" selected>من 4 إلى 7 أفراد (استهلاك مرتفع)</option>
+                                <option value="large">أكثر من 8 أفراد (استهلاك مكثف)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl bg-water-900/60 border border-cyanAccent/20 space-y-4" id="calc-results">
+                        <h4 class="text-base font-bold text-cyanAccent border-b border-slate-800 pb-2">جدول التغيير الموصى به:</h4>
+                        <div class="space-y-3 text-xs sm:text-sm">
+                            <div class="flex justify-between items-center text-slate-300">
+                                <span>الشمعة الأولى:</span>
+                                <span id="stage1-time" class="font-bold text-emeraldAccent">كل 3 أشهر</span>
+                            </div>
+                            <div class="flex justify-between items-center text-slate-300">
+                                <span>الشمعة الثانية والثالثة:</span>
+                                <span id="stage2-time" class="font-bold text-emeraldAccent">كل 6 أشهر</span>
+                            </div>
+                            <div class="flex justify-between items-center text-slate-300">
+                                <span>الممبرين (RO):</span>
+                                <span id="stage4-time" class="font-bold text-cyanAccent">كل 12 - 18 شهر</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800 text-center">
+                            <a href="#contact" class="inline-block w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold text-xs">احجز زيارة صيانة دورية الآن</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="reviews" class="py-24 bg-water-dark/60 border-t border-water-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs uppercase font-bold text-cyanAccent tracking-widest">ماذا يقول عملاؤنا؟</h2>
+                <h3 class="text-3xl sm:text-5xl font-black text-white">ثقة نعتز بها من <span class="gradient-text">آلاف العملاء</span></h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-3xl space-y-4">
+                    <div class="text-amber-400 text-sm flex gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-slate-300 text-xs sm:text-sm font-tajawal leading-relaxed">"ما شاء الله تبارك الله، سرعة في التركيب ونظافة شغل مفيش بعدها، الفرق في طعم المية بان من أول يوم."</p>
+                    <h4 class="text-sm font-bold text-white pt-2 border-t border-slate-800">أحمد محمود - القاهرة</h4>
+                </div>
+                <div class="glass-card p-8 rounded-3xl space-y-4">
+                    <div class="text-amber-400 text-sm flex gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-slate-300 text-xs sm:text-sm font-tajawal leading-relaxed">"خدمة الصيانة الدورية عندهم ممتازة، بيتصلوا بيا قبل ميعاد تغيير الشمعات بانتظام."</p>
+                    <h4 class="text-sm font-bold text-white pt-2 border-t border-slate-800">سارة الجمال - الإسكندرية</h4>
+                </div>
+                <div class="glass-card p-8 rounded-3xl space-y-4">
+                    <div class="text-amber-400 text-sm flex gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-slate-300 text-xs sm:text-sm font-tajawal leading-relaxed">"عملنا محطة تصفية مياه للكافيه بتاعنا، الضغط ممتاز والمية ناعمة جداً وفرقت كتير."</p>
+                    <h4 class="text-sm font-bold text-white pt-2 border-t border-slate-800">كافيه لافينزا - تجاري</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Order Section -->
+    <section id="contact" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-xs uppercase font-bold text-cyanAccent tracking-widest mb-2">تواصل معنا</h2>
+                        <h3 class="text-3xl sm:text-5xl font-black text-white">نحن هنا <span class="gradient-text">لخدمتك دائماً</span></h3>
+                        <p class="text-slate-400 font-tajawal text-sm mt-4">يسعدنا استقبال استفساراتكم وحجز المعاينات المجانية طوال أيام الأسبوع.</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="glass-card p-5 rounded-2xl flex items-center gap-4 border border-water-500/20">
+                            <div class="w-12 h-12 rounded-xl bg-water-500/20 flex items-center justify-center text-cyanAccent text-xl">
+                                <i class="fa-solid fa-wrench"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-slate-400 font-tajawal">مسؤول الصيانة والتركيب (م/ ممدوح)</span>
+                                <h4 class="text-base font-bold text-white" dir="ltr">01144376187</h4>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl flex items-center gap-4 border border-water-500/20">
+                            <div class="w-12 h-12 rounded-xl bg-emeraldAccent/20 flex items-center justify-center text-emeraldAccent text-xl">
+                                <i class="fa-solid fa-user-tie"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-slate-400 font-tajawal">مدير الشركة (بشمهندس نبيل)</span>
+                                <h4 class="text-base font-bold text-white" dir="ltr">01116216742</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Booking Form -->
+                <div class="glass-card p-8 sm:p-10 rounded-3xl border border-water-400/30">
+                    <h4 class="text-xl font-bold text-white mb-2">احجز معاينة / طلب خدمة فورية</h4>
+                    <p class="text-amber-300 text-xs font-semibold mb-6"><i class="fa-solid fa-circle-info ml-1"></i> تأكد من كتابة رقم تليفون مفعّل عليه تطبيق <strong>الواتساب</strong> لفتح المحادثة مباشرة.</p>
+                    
+                    <form id="orderForm" class="space-y-4" onsubmit="event.preventDefault();">
+                        <div>
+                            <label class="block text-slate-300 text-xs font-bold mb-2">الاسم بالكامل</label>
+                            <input type="text" id="custName" required placeholder="أدخل اسمك الكريم" class="w-full bg-water-900/80 border border-water-500/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyanAccent">
+                        </div>
+
+                        <div>
+                            <label class="block text-slate-300 text-xs font-bold mb-2">رقم الهاتف (عليه واتساب)</label>
+                            <input type="tel" id="custPhone" required placeholder="01xxxxxxxx" class="w-full bg-water-900/80 border border-water-500/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyanAccent">
+                        </div>
+
+                        <div>
+                            <label class="block text-slate-300 text-xs font-bold mb-2">نوع الخدمة المطلوبة</label>
+                            <select id="serviceType" class="w-full bg-water-900/80 border border-water-500/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyanAccent">
+                                <option value="تركيب فلتر جديد (معاينة مجانية)">تركيب فلتر جديد (معاينة مجانية)</option>
+                                <option value="صيانة وتغيير شمعات">صيانة وتغيير شمعات</option>
+                                <option value="فحص جودة ونقاء المياه">فحص جودة ونقاء المياه</option>
+                                <option value="محطة تحلية تجارية">محطة تحلية تجارية</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-slate-300 text-xs font-bold mb-2">العنوان بالكامل</label>
+                            <textarea id="custAddress" rows="3" required placeholder="المحافظة - المنطقة - الشارع - رقم العمارة" class="w-full bg-water-900/80 border border-water-500/30 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyanAccent"></textarea>
+                        </div>
+
+                        <div class="pt-2 space-y-3">
+                            <label class="block text-slate-300 text-xs font-bold">اختر من ترسل له الطلب عبر الواتساب:</label>
+                            <div class="grid sm:grid-cols-2 gap-3">
+                                <button type="button" onclick="sendToWhatsApp('01144376187', 'مهندس ممدوح')" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:opacity-90 text-white font-bold text-xs shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer">
+                                    <i class="fa-brands fa-whatsapp text-base"></i>
+                                    <span>للمنسق م/ ممدوح (صيانة)</span>
+                                </button>
+                                <button type="button" onclick="sendToWhatsApp('01116216742', 'بشمهندس نبيل')" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-water-600 to-cyan-500 hover:opacity-90 text-white font-bold text-xs shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer">
+                                    <i class="fa-brands fa-whatsapp text-base"></i>
+                                    <span>للمدير م/ نبيل (إدارة)</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-water-dark border-t border-slate-800 py-12 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 space-y-4">
+            <div class="flex justify-center items-center gap-2 text-white font-bold text-lg">
+                <i class="fa-solid fa-droplet text-cyanAccent"></i>
+                <span>نبع الحياة</span>
+            </div>
+            <p class="font-tajawal">جميع الحقوق محفوظة © <span id="year"></span> لشركة نبع الحياة لتقنية ومعدات معالجة المياه.</p>
+        </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-card max-w-lg w-full rounded-3xl p-6 relative space-y-4 border border-cyanAccent/40">
+            <button onclick="closeProductModal()" class="absolute top-4 left-4 text-slate-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img id="modalImg" src="" alt="" class="w-full h-48 object-cover rounded-2xl">
+            <h3 id="modalTitle" class="text-xl font-bold text-white"></h3>
+            <p id="modalDesc" class="text-slate-300 text-xs font-tajawal leading-relaxed"></p>
+            <div class="flex justify-between items-center text-xs font-bold text-cyanAccent border-t border-slate-800 pt-3">
+                <span>بلد المنشأ: <span id="modalOrigin" class="text-white"></span></span>
+                <span>المراحل: <span id="modalStages" class="text-white"></span></span>
+            </div>
+            <a href="#contact" onclick="closeProductModal()" class="block w-full text-center py-3 rounded-xl bg-cyan-500 text-white font-bold text-xs">طلب هذا المنتج</a>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        document.getElementById('year').innerText = new Date().getFullYear();
+
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function calculateMaintenance() {
+            const familySize = document.getElementById('calc-family-size').value;
+            const stage1 = document.getElementById('stage1-time');
+            const stage2 = document.getElementById('stage2-time');
+            const stage4 = document.getElementById('stage4-time');
+
+            if (familySize === 'large') {
+                stage1.innerText = "كل 1.5 - 2 شهر";
+                stage2.innerText = "كل 4 أشهر";
+                stage4.innerText = "كل 10 - 12 شهر";
+            } else if (familySize === 'medium') {
+                stage1.innerText = "كل 3 أشهر";
+                stage2.innerText = "كل 6 أشهر";
+                stage4.innerText = "كل 12 - 18 شهر";
+            } else {
+                stage1.innerText = "كل 3 - 4 أشهر";
+                stage2.innerText = "كل 6 - 8 أشهر";
+                stage4.innerText = "كل 18 - 24 شهر";
+            }
+        }
+
+        function openProductModal(title, desc, origin, stages, imgSrc) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('modalOrigin').innerText = origin;
+            document.getElementById('modalStages').innerText = stages;
+            document.getElementById('modalImg').src = imgSrc;
+            document.getElementById('productModal').classList.remove('hidden');
+        }
+
+        function closeProductModal() {
+            document.getElementById('productModal').classList.add('hidden');
+        }
+
+        // Fixed Direct WhatsApp Routing
+        function sendToWhatsApp(targetPhone, targetName) {
+            var name = document.getElementById('custName').value.trim();
+            var phone = document.getElementById('custPhone').value.trim();
+            var address = document.getElementById('custAddress').value.trim();
+            var service = document.getElementById('serviceType').value;
+
+            if (!name || !phone || !address) {
+                alert('من فضلك املأ حقول (الاسم، رقم التليفون، والعنوان) أولاً قبل الضغط على الإرسال.');
+                document.getElementById('custName').focus();
+                return;
+            }
+
+            var textMessage = "السلام عليكم " + targetName + "، أرغب في طلب خدمة من شركة نبع الحياة:\n" +
+                              "👤 الاسم: " + name + "\n" +
+                              "📱 رقم الواتساب: " + phone + "\n" +
+                              "📍 العنوان: " + address + "\n" +
+                              "🛠️ الخدمة المطلوبة: " + service;
+
+            var encodedMessage = encodeURIComponent(textMessage);
+            var whatsappURL = "https://wa.me/2" + targetPhone + "?text=" + encodedMessage;
+            
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
+</body>
+</html>
